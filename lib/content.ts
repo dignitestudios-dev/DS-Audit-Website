@@ -1,11 +1,11 @@
 export const PHONE = "+1 877 714 1770";
-export const EMAIL = "info@dignitestudios.com";
-/** Turnaround shown across the site. Replace the bracketed placeholder with the real number. */
-export const REPORT_DAYS = "[5]";
+export const EMAIL = "support@dignitestudios.com";
+/** Turnaround (working days) shown across the site: FAQ, "How it works" and the order form. */
+export const REPORT_DAYS = "3";
 
 export const TERMS_URL = "https://www.dignitestudios.com/terms-and-conditions";
 export const PRIVACY_URL = "https://www.dignitestudios.com/privacy-policy";
-export const SUPPORT_EMAIL = "support@dignitestudios.com";
+export const SUPPORT_EMAIL = EMAIL; // one address everywhere
 export const SUPPORT_EMAIL_HREF = `mailto:${SUPPORT_EMAIL}`;
 /** Bump when the SMS consent wording changes; it is stored with each submission. */
 export const SMS_CONSENT_VERSION = "2026-11-05";
@@ -61,5 +61,5 @@ export const faqs = [
   { q: "Do you need my passwords or admin access?", a: "No. We audit the public version of your app or website. If you want logged-in areas checked, create a separate test account for us. Never share your own password." },
   { q: "Is the security check safe for my live app?", a: "Yes. We use non-destructive checks only: no load testing, no attempts to break in, and no changes to your data. We only review apps and websites you’re authorised to have tested." },
   { q: "Will you fix the problems you find?", a: "Only if you want us to. The report is written so you or any developer can act on it. If you’d like us to fix them, we’ll quote separately." },
-  { q: "How long does it take?", a: "Your report arrives within [5] working days of payment." },
+  { q: "How long does it take?", a: `Your report arrives within ${REPORT_DAYS} working days of payment.` },
 ];

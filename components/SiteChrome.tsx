@@ -25,7 +25,7 @@ export function SiteFooter() {
   return (
     <footer className="ftr">
       <div className="ftr__in">
-        <span>© 2026 Dignite Studios · [BUSINESS POSTAL ADDRESS]</span>
+        <span>© 2026 Dignite Studios. All rights reserved.</span>
         <span className="ftr__links">
           <Link href="/news">Security news</Link>
           <a href={TERMS_URL}>Terms</a>

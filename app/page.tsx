@@ -8,6 +8,8 @@ import { PageShell, SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { Shield, Tick } from "@/components/icons";
 import AreasBento from "@/components/AreasBento";
 import AiSection from "@/components/AiSection";
+import Locations from "@/components/Locations";
+import { locations } from "@/lib/locations";
 import Proof from "@/components/Proof";
 import HeroReport from "@/components/HeroReport";
 import SampleReport from "@/components/SampleReport";
@@ -54,7 +56,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@graph": [
                 { "@type": "WebSite", "@id": `${SITE_URL}/#site`, url: SITE_URL, name: SITE_NAME, publisher: { "@id": `${SITE_URL}/#org` } },
-                { "@type": "Organization", "@id": `${SITE_URL}/#org`, name: SITE_NAME, url: SITE_URL, logo: `${SITE_URL}/logo-dark.webp`, email: EMAIL, telephone: PHONE },
+                { "@type": "Organization", "@id": `${SITE_URL}/#org`, name: SITE_NAME, url: SITE_URL, logo: `${SITE_URL}/logo-dark.webp`, email: EMAIL, telephone: PHONE, location: locations.map((l) => ({ "@type": "Place", name: l.place, address: { "@type": "PostalAddress", ...l.schema } })) },
                 {
                   "@type": "Service",
                   name: HOME_TITLE,
@@ -254,6 +256,11 @@ export default function Home() {
             <h2 className="h2" id="faq-title">Questions</h2>
             <Faq />
           </div>
+        </section>
+
+        {/* Locations */}
+        <section className="sec sec--dark" aria-labelledby="loc-title">
+          <Locations />
         </section>
 
         {/* Closing CTA */}
